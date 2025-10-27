@@ -131,8 +131,8 @@ Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles _
 End Sub
 
 
-Private Sub mnuRunCommand_Click(sender As Object, e As EventArgs) Handles _
-            mnuRunCommand.Click
+Private Sub mnuRunStart_Click(sender As Object, e As EventArgs) Handles _
+            mnuRunStart.Click
 ''--------------------------------------------------------------------
 ''    メニュー「実行」－「コマンドを実行」
 ''--------------------------------------------------------------------

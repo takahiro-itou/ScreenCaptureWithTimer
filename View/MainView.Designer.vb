@@ -30,7 +30,7 @@ Partial Class MainView
         mnuFile = New ToolStripMenuItem()
         mnuFileExit = New ToolStripMenuItem()
         mnuRun = New ToolStripMenuItem()
-        mnuRunCommand = New ToolStripMenuItem()
+        mnuRunStart = New ToolStripMenuItem()
 
         tmrSnap = New Timer(components)
         dlgSave = New SaveFileDialog()
@@ -64,13 +64,13 @@ Partial Class MainView
         ' mnuRun
         '
         resources.ApplyResources(mnuRun, "mnuRun")
-        mnuRun.DropDownItems.AddRange(New ToolStripItem() {mnuRunCommand})
+        mnuRun.DropDownItems.AddRange(New ToolStripItem() {mnuRunStart})
         mnuRun.Name = "mnuRun"
         '
-        ' mnuRunCommand
+        ' mnuRunStart
         '
-        resources.ApplyResources(mnuRunCommand, "mnuRunCommand")
-        mnuRunCommand.Name = "mnuRunCommand"
+        resources.ApplyResources(mnuRunStart, "mnuRunStart")
+        mnuRunStart.Name = "mnuRunStart"
 
         '
         ' tmrSnap
@@ -132,7 +132,7 @@ Partial Class MainView
     Friend WithEvents mnuFile As ToolStripMenuItem
     Friend WithEvents mnuFileExit As ToolStripMenuItem
     Friend WithEvents mnuRun As ToolStripMenuItem
-    Friend WithEvents mnuRunCommand As ToolStripMenuItem
+    Friend WithEvents mnuRunStart As ToolStripMenuItem
 
     Friend WithEvents tmrSnap As Timer
     Friend WithEvents dlgSave As SaveFileDialog

@@ -228,16 +228,16 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 
-  <data name="mnuRunCommand.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="mnuRunStart.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
-  <data name="mnuRunCommand.Text" xml:space="preserve">
+  <data name="mnuRunStart.Text" xml:space="preserve">
     <value>Run &amp;Command</value>
   </data>
-  <data name="&gt;&gt;mnuRunCommand.Name" xml:space="preserve">
-    <value>mnuRunCommand</value>
+  <data name="&gt;&gt;mnuRunStart.Name" xml:space="preserve">
+    <value>mnuRunStart</value>
   </data>
-  <data name="&gt;&gt;mnuRunCommand.Type" xml:space="preserve">
+  <data name="&gt;&gt;mnuRunStart.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 
