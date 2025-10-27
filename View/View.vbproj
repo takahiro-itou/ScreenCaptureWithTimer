@@ -12,14 +12,12 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <Import Project="..\Props\OutputApps.props" />
+
   <ItemGroup>
     <Import Include="System.Data" />
     <Import Include="System.Drawing" />
     <Import Include="System.Windows.Forms" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\WinFormsControl\WinFormsControl.csproj" />
   </ItemGroup>
 
   <ItemGroup>
