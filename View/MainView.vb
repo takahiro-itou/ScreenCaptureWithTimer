@@ -106,7 +106,7 @@ Private Sub MainView_Load(sender As Object, e As EventArgs) Handles _
     Me.m_prvText = "ロード中"
 
     initializeWorkFiles()
-    tmrDisk.Enabled = True
+    tmrSnap.Enabled = True
 End Sub
 
 
@@ -141,8 +141,8 @@ Private Sub mnuRunCommand_Click(sender As Object, e As EventArgs) Handles _
 End Sub
 
 
-Private Sub tmrDisk_Tick(sender As Object, e As EventArgs) Handles _
-            tmrDisk.Tick
+Private Sub tmrSnap_Tick(sender As Object, e As EventArgs) Handles _
+            tmrSnap.Tick
 ''--------------------------------------------------------------------
 ''    「タイマー」のイベントハンドラ
 ''--------------------------------------------------------------------

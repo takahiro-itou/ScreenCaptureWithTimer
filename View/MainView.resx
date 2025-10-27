@@ -241,13 +241,13 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 
-  <metadata name="tmrDisk.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="tmrSnap.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>122, 17</value>
   </metadata>
-  <data name="&gt;&gt;tmrDisk.Name" xml:space="preserve">
-    <value>tmrDisk</value>
+  <data name="&gt;&gt;tmrSnap.Name" xml:space="preserve">
+    <value>tmrSnap</value>
   </data>
-  <data name="&gt;&gt;tmrDisk.Type" xml:space="preserve">
+  <data name="&gt;&gt;tmrSnap.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 

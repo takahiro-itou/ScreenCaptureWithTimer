@@ -32,7 +32,7 @@ Partial Class MainView
         mnuRun = New ToolStripMenuItem()
         mnuRunCommand = New ToolStripMenuItem()
 
-        tmrDisk = New Timer(components)
+        tmrSnap = New Timer(components)
         dlgSave = New SaveFileDialog()
 
         Label1 = New Label()
@@ -73,10 +73,10 @@ Partial Class MainView
         mnuRunCommand.Name = "mnuRunCommand"
 
         '
-        ' tmrDisk
+        ' tmrSnap
         '
-        resources.ApplyResources(tmrDisk, "tmrDisk")
-        tmrDisk.Interval = 60000
+        resources.ApplyResources(tmrSnap, "tmrSnap")
+        tmrSnap.Interval = 60000
 
         '
         ' dlgSave
@@ -134,7 +134,7 @@ Partial Class MainView
     Friend WithEvents mnuRun As ToolStripMenuItem
     Friend WithEvents mnuRunCommand As ToolStripMenuItem
 
-    Friend WithEvents tmrDisk As Timer
+    Friend WithEvents tmrSnap As Timer
     Friend WithEvents dlgSave As SaveFileDialog
 
     Friend WithEvents Label1 As Label
