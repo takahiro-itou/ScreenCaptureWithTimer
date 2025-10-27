@@ -31,16 +31,25 @@ Partial Class MainView
         mnuFileExit = New ToolStripMenuItem()
         mnuRun = New ToolStripMenuItem()
         mnuRunStart = New ToolStripMenuItem()
+        mnuRunPause = New ToolStripMenuItem()
 
         tmrSnap = New Timer(components)
         dlgSave = New SaveFileDialog()
 
         Label1 = New Label()
         txtWnd = New TextBox()
-        btnRun = New Button()
+        btnWnd = New Button()
+
+        Label1 = New Label()
         txtOutput = New TextBox()
+        btnOutput = New Button()
+
+        btnRun = New Button()
+        btnPause = New Button()
+        picView = New PictureBox()
 
         mnuMain.SuspendLayout()
+        CType(picView, ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
 
         '
@@ -64,13 +73,17 @@ Partial Class MainView
         ' mnuRun
         '
         resources.ApplyResources(mnuRun, "mnuRun")
-        mnuRun.DropDownItems.AddRange(New ToolStripItem() {mnuRunStart})
+        mnuRun.DropDownItems.AddRange(New ToolStripItem() {mnuRunStart, mnuRunPause})
         mnuRun.Name = "mnuRun"
         '
         ' mnuRunStart
         '
         resources.ApplyResources(mnuRunStart, "mnuRunStart")
         mnuRunStart.Name = "mnuRunStart"
+        '
+        ' mnuRunPause
+        '
+        mnuRunStart.Name = "mnuRunPause"
 
         '
         ' tmrSnap
@@ -95,18 +108,45 @@ Partial Class MainView
         resources.ApplyResources(txtWnd, "txtWnd")
         txtWnd.Name = "txtWnd"
         '
-        ' btnRun
+        ' btnWnd
         '
-        resources.ApplyResources(btnRun, "btnRun")
-        btnRun.Name = "btnRun"
-        btnRun.UseVisualStyleBackColor = True
+        btnWnd.Name = "btnWnd"
+        btnWnd.UseVisualStyleBackColor = True
+
+        '
+        ' Label2
+        '
+        Label1.Name = "Label2"
         '
         ' txtOutput
         '
         resources.ApplyResources(txtOutput, "txtOutput")
         txtOutput.Name = "txtOutput"
         txtOutput.BackColor = SystemColors.Window
-        txtOutput.ReadOnly = True
+        '
+        ' btnOutput
+        '
+        btnOutput.Name = "btnOutput"
+        btnOutput.UseVisualStyleBackColor = True
+
+        '
+        ' btnRun
+        '
+        resources.ApplyResources(btnRun, "btnRun")
+        btnRun.Name = "btnRun"
+        btnRun.UseVisualStyleBackColor = True
+        '
+        ' btnPause
+        '
+        btnPause.Name = "btnPause"
+        btnPause.UseVisualStyleBackColor = True
+
+        '
+        ' picView
+        '
+        picView.BackColor = Color.White
+        picView.Name = "picView"
+        picView.TabStop = False
 
         '
         ' MainView
@@ -117,13 +157,19 @@ Partial Class MainView
         Me.Controls.Add(mnuMain)
         Me.Controls.Add(Label1)
         Me.Controls.Add(txtWnd)
-        Me.Controls.Add(btnRun)
+        Me.Controls.Add(btnWnd)
+        Me.Controls.Add(Label2)
         Me.Controls.Add(txtOutput)
+        Me.Controls.Add(btnOutput)
+        Me.Controls.Add(btnRun)
+        Me.Controls.Add(btnPause)
+        Me.Controls.Add(picView)
         Me.MainMenuStrip = mnuMain
         Me.Name = "MainView"
 
         mnuMain.ResumeLayout(False)
         mnuMain.PerformLayout()
+        CType(picView, ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
     End Sub
@@ -133,13 +179,21 @@ Partial Class MainView
     Friend WithEvents mnuFileExit As ToolStripMenuItem
     Friend WithEvents mnuRun As ToolStripMenuItem
     Friend WithEvents mnuRunStart As ToolStripMenuItem
+    Friend WithEvents mnuRunPause As ToolStripMenuItem
 
     Friend WithEvents tmrSnap As Timer
     Friend WithEvents dlgSave As SaveFileDialog
 
     Friend WithEvents Label1 As Label
     Friend WithEvents txtWnd As TextBox
-    Friend WithEvents btnRun As Button
+    Friend WithEvents btnWnd As Button
+
+    Friend WithEvents Label2 As Label
     Friend WithEvents txtOutput As TextBox
+    Friend WithEvents btnOutput As Button
+
+    Friend WithEvents btnRun As Button
+    Friend WithEvents btnPause As Button
+    Friend WithEvents picView As PictureBox
 
 End Class
