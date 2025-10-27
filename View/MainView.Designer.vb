@@ -36,7 +36,7 @@ Partial Class MainView
         dlgSave = New SaveFileDialog()
 
         Label1 = New Label()
-        txtCommand = New TextBox()
+        txtWnd = New TextBox()
         btnRun = New Button()
         txtOutput = New TextBox()
 
@@ -90,10 +90,10 @@ Partial Class MainView
         resources.ApplyResources(Label1, "Label1")
         Label1.Name = "Label1"
         '
-        ' txtCommand
+        ' txtWnd
         '
-        resources.ApplyResources(txtCommand, "txtCommand")
-        txtCommand.Name = "txtCommand"
+        resources.ApplyResources(txtWnd, "txtWnd")
+        txtWnd.Name = "txtWnd"
         '
         ' btnRun
         '
@@ -116,7 +116,7 @@ Partial Class MainView
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.Controls.Add(mnuMain)
         Me.Controls.Add(Label1)
-        Me.Controls.Add(txtCommand)
+        Me.Controls.Add(txtWnd)
         Me.Controls.Add(btnRun)
         Me.Controls.Add(txtOutput)
         Me.MainMenuStrip = mnuMain
@@ -138,7 +138,7 @@ Partial Class MainView
     Friend WithEvents dlgSave As SaveFileDialog
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtCommand As TextBox
+    Friend WithEvents txtWnd As TextBox
     Friend WithEvents btnRun As Button
     Friend WithEvents txtOutput As TextBox
 

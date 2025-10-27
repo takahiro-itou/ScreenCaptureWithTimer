@@ -251,28 +251,28 @@
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 
-  <data name="txtCommand.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="txtWnd.Location" type="System.Drawing.Point, System.Drawing">
     <value>96, 48</value>
   </data>
-  <data name="txtCommand.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="txtWnd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="txtCommand.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtWnd.Size" type="System.Drawing.Size, System.Drawing">
     <value>560, 19</value>
   </data>
-  <data name="txtCommand.TabIndex" type="System.Int32, mscorlib">
+  <data name="txtWnd.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;txtCommand.Name" xml:space="preserve">
-    <value>txtCommand</value>
+  <data name="&gt;&gt;txtWnd.Name" xml:space="preserve">
+    <value>txtWnd</value>
   </data>
-  <data name="&gt;&gt;txtCommand.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txtWnd.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;txtCommand.Type" xml:space="preserve">
+  <data name="&gt;&gt;txtWnd.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtCommand.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txtWnd.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
 
