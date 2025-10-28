@@ -40,7 +40,7 @@ Partial Class MainView
         txtWnd = New TextBox()
         btnWnd = New Button()
 
-        Label1 = New Label()
+        Label2 = New Label()
         txtOutput = New TextBox()
         btnOutput = New Button()
 
