@@ -396,25 +396,16 @@
   </data>
 
   <data name="txtOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 112</value>
+    <value>95, 75</value>
   </data>
   <data name="txtOutput.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="txtOutput.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtOutput.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Both</value>
-  </data>
   <data name="txtOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>640, 320</value>
+    <value>351, 19</value>
   </data>
   <data name="txtOutput.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="txtOutput.Text" xml:space="preserve">
-    <value>Outputs</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;txtOutput.Name" xml:space="preserve">
     <value>txtOutput</value>
@@ -426,7 +417,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtOutput.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
 
 </root>
