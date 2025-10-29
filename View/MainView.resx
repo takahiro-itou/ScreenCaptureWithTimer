@@ -334,6 +334,19 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 
+  <data name="mnuRunPause.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 22</value>
+  </data>
+  <data name="mnuRunPause.Text" xml:space="preserve">
+    <value>&amp;Pause</value>
+  </data>
+  <data name="&gt;&gt;mnuRunPause.Name" xml:space="preserve">
+    <value>mnuRunPause</value>
+  </data>
+  <data name="&gt;&gt;mnuRunPause.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+
   <data name="mnuRunStart.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 22</value>
   </data>
