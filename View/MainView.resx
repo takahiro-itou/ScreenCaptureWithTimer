@@ -360,6 +360,31 @@
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 
+  <data name="picView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="picView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 153</value>
+  </data>
+  <data name="picView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>521, 283</value>
+  </data>
+  <data name="picView.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;picView.Name" xml:space="preserve">
+    <value>picView</value>
+  </data>
+  <data name="&gt;&gt;picView.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;picView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picView.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+
   <metadata name="tmrSnap.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>122, 17</value>
   </metadata>
