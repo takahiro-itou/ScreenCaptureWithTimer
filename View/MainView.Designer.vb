@@ -40,7 +40,7 @@ Partial Class MainView
         txtWnd = New TextBox()
         btnWnd = New Button()
 
-        Label2 = New Label()
+        label2 = New Label()
         txtOutput = New TextBox()
         btnOutput = New Button()
 
@@ -114,9 +114,9 @@ Partial Class MainView
         btnWnd.UseVisualStyleBackColor = True
 
         '
-        ' Label2
+        ' label2
         '
-        label1.Name = "Label2"
+        label1.Name = "label2"
         '
         ' txtOutput
         '
@@ -158,7 +158,7 @@ Partial Class MainView
         Me.Controls.Add(label1)
         Me.Controls.Add(txtWnd)
         Me.Controls.Add(btnWnd)
-        Me.Controls.Add(Label2)
+        Me.Controls.Add(label2)
         Me.Controls.Add(txtOutput)
         Me.Controls.Add(btnOutput)
         Me.Controls.Add(btnRun)
@@ -188,7 +188,7 @@ Partial Class MainView
     Friend WithEvents txtWnd As TextBox
     Friend WithEvents btnWnd As Button
 
-    Friend WithEvents Label2 As Label
+    Friend WithEvents label2 As Label
     Friend WithEvents txtOutput As TextBox
     Friend WithEvents btnOutput As Button
 
