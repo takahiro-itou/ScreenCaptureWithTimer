@@ -167,6 +167,31 @@
     <value>7</value>
   </data>
 
+  <data name="btnWnd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>466, 41</value>
+  </data>
+  <data name="btnWnd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 19</value>
+  </data>
+  <data name="btnWnd.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnWnd.Text" xml:space="preserve">
+    <value>&amp;Find</value>
+  </data>
+  <data name="&gt;&gt;btnWnd.Name" xml:space="preserve">
+    <value>btnWnd</value>
+  </data>
+  <data name="&gt;&gt;btnWnd.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnWnd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnWnd.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+
   <metadata name="dlgSave.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>211, 17</value>
   </metadata>
