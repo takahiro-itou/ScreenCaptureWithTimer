@@ -36,7 +36,7 @@ Partial Class MainView
         tmrSnap = New Timer(components)
         dlgSave = New SaveFileDialog()
 
-        Label1 = New Label()
+        label1 = New Label()
         txtWnd = New TextBox()
         btnWnd = New Button()
 
@@ -98,10 +98,10 @@ Partial Class MainView
         dlgSave.FileName = "dlgSave"
 
         '
-        ' Label1
+        ' label1
         '
-        resources.ApplyResources(Label1, "Label1")
-        Label1.Name = "Label1"
+        resources.ApplyResources(label1, "label1")
+        label1.Name = "label1"
         '
         ' txtWnd
         '
@@ -116,7 +116,7 @@ Partial Class MainView
         '
         ' Label2
         '
-        Label1.Name = "Label2"
+        label1.Name = "Label2"
         '
         ' txtOutput
         '
@@ -155,7 +155,7 @@ Partial Class MainView
         AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.Controls.Add(mnuMain)
-        Me.Controls.Add(Label1)
+        Me.Controls.Add(label1)
         Me.Controls.Add(txtWnd)
         Me.Controls.Add(btnWnd)
         Me.Controls.Add(Label2)
@@ -184,7 +184,7 @@ Partial Class MainView
     Friend WithEvents tmrSnap As Timer
     Friend WithEvents dlgSave As SaveFileDialog
 
-    Friend WithEvents Label1 As Label
+    Friend WithEvents label1 As Label
     Friend WithEvents txtWnd As TextBox
     Friend WithEvents btnWnd As Button
 
