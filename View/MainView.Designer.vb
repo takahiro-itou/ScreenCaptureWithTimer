@@ -83,7 +83,8 @@ Partial Class MainView
         '
         ' mnuRunPause
         '
-        mnuRunStart.Name = "mnuRunPause"
+        mnuRunPause.Name = "mnuRunPause"
+        resources.ApplyResources(mnuRunPause, "mnuRunPause")
 
         '
         ' tmrSnap
@@ -110,6 +111,7 @@ Partial Class MainView
         '
         ' btnWnd
         '
+        resources.ApplyResources(btnWnd, "btnWnd")
         btnWnd.Name = "btnWnd"
         btnWnd.UseVisualStyleBackColor = True
 
@@ -126,6 +128,7 @@ Partial Class MainView
         '
         ' btnOutput
         '
+        resources.ApplyResources(btnOutput, "btnOutput")
         btnOutput.Name = "btnOutput"
         btnOutput.UseVisualStyleBackColor = True
 
@@ -138,12 +141,14 @@ Partial Class MainView
         '
         ' btnPause
         '
+        resources.ApplyResources(btnPause, "btnPause")
         btnPause.Name = "btnPause"
         btnPause.UseVisualStyleBackColor = True
 
         '
         ' picView
         '
+        resources.ApplyResources(picView, "picView")
         picView.BackColor = Color.White
         picView.Name = "picView"
         picView.TabStop = False
