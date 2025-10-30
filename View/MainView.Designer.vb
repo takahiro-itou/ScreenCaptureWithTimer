@@ -118,13 +118,14 @@ Partial Class MainView
         '
         ' label2
         '
-        label1.Name = "label2"
+        resources.ApplyResources(label2, "label2")
+        label2.Name = "label2"
         '
         ' txtOutput
         '
+        txtOutput.BackColor = SystemColors.Window
         resources.ApplyResources(txtOutput, "txtOutput")
         txtOutput.Name = "txtOutput"
-        txtOutput.BackColor = SystemColors.Window
         '
         ' btnOutput
         '
@@ -148,8 +149,8 @@ Partial Class MainView
         '
         ' picView
         '
-        resources.ApplyResources(picView, "picView")
         picView.BackColor = Color.White
+        resources.ApplyResources(picView, "picView")
         picView.Name = "picView"
         picView.TabStop = False
 
