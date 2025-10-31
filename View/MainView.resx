@@ -230,13 +230,13 @@
   </data>
 
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 80</value>
+    <value>16, 72</value>
   </data>
   <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 12</value>
+    <value>64, 20</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
