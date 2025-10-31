@@ -55,35 +55,36 @@ Partial Class MainView
         '
         ' mnuMain
         '
-        resources.ApplyResources(mnuMain, "mnuMain")
         mnuMain.Items.AddRange(New ToolStripItem() {mnuFile, mnuRun})
+        resources.ApplyResources(mnuMain, "mnuMain")
         mnuMain.Name = "mnuMain"
         '
         ' mnuFile
         '
-        resources.ApplyResources(mnuFile, "mnuFile")
         mnuFile.DropDownItems.AddRange(New ToolStripItem() {mnuFileExit})
         mnuFile.Name = "mnuFile"
+        resources.ApplyResources(mnuFile, "mnuFile")
         '
         ' mnuFileExit
         '
-        resources.ApplyResources(mnuFileExit, "mnuFileExit")
         mnuFileExit.Name = "mnuFileExit"
+        resources.ApplyResources(mnuFileExit, "mnuFileExit")
         '
         ' mnuRun
         '
-        resources.ApplyResources(mnuRun, "mnuRun")
         mnuRun.DropDownItems.AddRange(New ToolStripItem() {mnuRunStart, mnuRunPause})
         mnuRun.Name = "mnuRun"
+        resources.ApplyResources(mnuRun, "mnuRun")
         '
         ' mnuRunStart
         '
-        resources.ApplyResources(mnuRunStart, "mnuRunStart")
         mnuRunStart.Name = "mnuRunStart"
+        resources.ApplyResources(mnuRunStart, "mnuRunStart")
         '
         ' mnuRunPause
         '
-        mnuRunStart.Name = "mnuRunPause"
+        mnuRunPause.Name = "mnuRunPause"
+        resources.ApplyResources(mnuRunPause, "mnuRunPause")
 
         '
         ' tmrSnap
@@ -110,22 +111,25 @@ Partial Class MainView
         '
         ' btnWnd
         '
+        resources.ApplyResources(btnWnd, "btnWnd")
         btnWnd.Name = "btnWnd"
         btnWnd.UseVisualStyleBackColor = True
 
         '
         ' label2
         '
-        label1.Name = "label2"
+        resources.ApplyResources(label2, "label2")
+        label2.Name = "label2"
         '
         ' txtOutput
         '
+        txtOutput.BackColor = SystemColors.Window
         resources.ApplyResources(txtOutput, "txtOutput")
         txtOutput.Name = "txtOutput"
-        txtOutput.BackColor = SystemColors.Window
         '
         ' btnOutput
         '
+        resources.ApplyResources(btnOutput, "btnOutput")
         btnOutput.Name = "btnOutput"
         btnOutput.UseVisualStyleBackColor = True
 
@@ -138,6 +142,7 @@ Partial Class MainView
         '
         ' btnPause
         '
+        resources.ApplyResources(btnPause, "btnPause")
         btnPause.Name = "btnPause"
         btnPause.UseVisualStyleBackColor = True
 
@@ -145,6 +150,7 @@ Partial Class MainView
         ' picView
         '
         picView.BackColor = Color.White
+        resources.ApplyResources(picView, "picView")
         picView.Name = "picView"
         picView.TabStop = False
 
