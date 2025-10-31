@@ -121,7 +121,7 @@
     <value>109, 23</value>
   </data>
   <data name="btnPause.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnPause.Text" xml:space="preserve">
     <value>&amp;Pause</value>
@@ -149,7 +149,7 @@
     <value>96, 24</value>
   </data>
   <data name="btnRun.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>7</value>
   </data>
   <data name="btnRun.Text" xml:space="preserve">
     <value>&amp;Start/Resume</value>
@@ -174,7 +174,7 @@
     <value>61, 19</value>
   </data>
   <data name="btnWnd.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="btnWnd.Text" xml:space="preserve">
     <value>&amp;Find</value>
@@ -215,7 +215,7 @@
     <value>59, 12</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>&amp;Command :</value>
@@ -243,7 +243,7 @@
     <value>59, 12</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>4</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>&amp;Output:</value>
@@ -303,7 +303,7 @@
     <value>672, 24</value>
   </data>
   <data name="mnuMain.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="mnuMain.Text" xml:space="preserve">
     <value>MainMenu</value>
@@ -370,7 +370,7 @@
     <value>521, 283</value>
   </data>
   <data name="picView.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;picView.Name" xml:space="preserve">
     <value>picView</value>
@@ -405,7 +405,7 @@
     <value>351, 19</value>
   </data>
   <data name="txtWnd.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;txtWnd.Name" xml:space="preserve">
     <value>txtWnd</value>
@@ -430,7 +430,7 @@
     <value>351, 19</value>
   </data>
   <data name="txtOutput.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;txtOutput.Name" xml:space="preserve">
     <value>txtOutput</value>
