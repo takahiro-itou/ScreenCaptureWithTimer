@@ -55,31 +55,31 @@ Partial Class MainView
         '
         ' mnuMain
         '
-        resources.ApplyResources(mnuMain, "mnuMain")
         mnuMain.Items.AddRange(New ToolStripItem() {mnuFile, mnuRun})
+        resources.ApplyResources(mnuMain, "mnuMain")
         mnuMain.Name = "mnuMain"
         '
         ' mnuFile
         '
-        resources.ApplyResources(mnuFile, "mnuFile")
         mnuFile.DropDownItems.AddRange(New ToolStripItem() {mnuFileExit})
         mnuFile.Name = "mnuFile"
+        resources.ApplyResources(mnuFile, "mnuFile")
         '
         ' mnuFileExit
         '
-        resources.ApplyResources(mnuFileExit, "mnuFileExit")
         mnuFileExit.Name = "mnuFileExit"
+        resources.ApplyResources(mnuFileExit, "mnuFileExit")
         '
         ' mnuRun
         '
-        resources.ApplyResources(mnuRun, "mnuRun")
         mnuRun.DropDownItems.AddRange(New ToolStripItem() {mnuRunStart, mnuRunPause})
         mnuRun.Name = "mnuRun"
+        resources.ApplyResources(mnuRun, "mnuRun")
         '
         ' mnuRunStart
         '
-        resources.ApplyResources(mnuRunStart, "mnuRunStart")
         mnuRunStart.Name = "mnuRunStart"
+        resources.ApplyResources(mnuRunStart, "mnuRunStart")
         '
         ' mnuRunPause
         '
@@ -118,13 +118,14 @@ Partial Class MainView
         '
         ' label2
         '
-        label1.Name = "label2"
+        resources.ApplyResources(label2, "label2")
+        label2.Name = "label2"
         '
         ' txtOutput
         '
+        txtOutput.BackColor = SystemColors.Window
         resources.ApplyResources(txtOutput, "txtOutput")
         txtOutput.Name = "txtOutput"
-        txtOutput.BackColor = SystemColors.Window
         '
         ' btnOutput
         '
@@ -148,8 +149,8 @@ Partial Class MainView
         '
         ' picView
         '
-        resources.ApplyResources(picView, "picView")
         picView.BackColor = Color.White
+        resources.ApplyResources(picView, "picView")
         picView.Name = "picView"
         picView.TabStop = False
 
