@@ -1,17 +1,43 @@
 ﻿Public Class MainView
 
 
-Private m_workFiles() As String
-Private m_fileFlags() As Boolean
-
-Private m_prvText As String
+Private m_nextNumber As Integer
 
 
-Private Sub captureScreen(
-        ByVal fileName As String) As Boolean
+Private Function captureScreen(
+    ByVal fileName As String) As Boolean
 ''--------------------------------------------------------------------
 ''    指定したウィンドウのキャプチャを行う
 ''--------------------------------------------------------------------
+Dim imgCanvas As System.Drawing.Bitmap
+Dim imgBuffer As System.Drawing.Bitmap
+Dim grpBuffer As System.Drawing.Graphics
+Dim hDisplayDC As IntPtr
+Dim hDstDC As IntPtr
+
+    hDisplayDC = GetDC(IntPtr.Zero)
+
+    imgBuffer = New System.Drawing.Bitmap(
+            Screen.PrimaryScreen.Bounds.Width,
+            Screen.PrimaryScreen.Bounds.Height)
+    grpBuffer = System.Drawing.Graphics.FromImage(imgBuffer)
+
+    hDstDC = grpBuffer.GetHdc()
+    BitBlt(hDstDC, 0, 0,
+           Screen.PrimaryScreen.Bounds.Width,
+           Screen.PrimaryScreen.Bounds.Height,
+           hDisplayDC, 0, 0, SRCCOPY)
+    grpBuffer.ReleaseHdc(hDstDC)
+    ReleaseDC(IntPtr.Zero, hDisplayDC)
+
+    imgBuffer.Save(fileName)
+
+    imgBuffer.Save("Test.jpg", ImageFormat.Jpeg)
+    imgBuffer.Save("Test.bmp", ImageFormat.Bmp)
+
+    imgCanvas = New System.Drawing.Bitmap(
+            imgBuffer, picView.Width, picView.Height)
+    picView.Image = imgCanvas
 
     Return  False
 End Function
