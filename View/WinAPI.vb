@@ -28,6 +28,12 @@ Public Function ReleaseDC(
 End Function
 
 <DllImport("user32.dll")> _
+Public Function GetWindowRect(
+    ByVal hWnd As IntPtr,
+    ByRef lpRect As System.Drawing.Rectangle) As Boolean
+End Function
+
+<DllImport("user32.dll")> _
 Public Function WindowFromPoint(
     ByVal pt As System.Drawing.Point) As IntPtr
 End Function
