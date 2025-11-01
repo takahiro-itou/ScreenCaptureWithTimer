@@ -91,7 +91,7 @@ Private Sub tmrSnap_Tick(sender As Object, e As EventArgs) Handles _
 ''    「タイマー」のイベントハンドラ
 ''--------------------------------------------------------------------
 
-    captureScreen()
+    captureScreen("Test.png")
 End Sub
 
 End Class
