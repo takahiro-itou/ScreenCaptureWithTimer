@@ -23,6 +23,10 @@ Public Function GetDC(ByVal hWnd As IntPtr) As IntPtr
 End Function
 
 <DllImport("user32.dll")> _
+Public Function GetDesktopWindow() As IntPtr
+End Function
+
+<DllImport("user32.dll")> _
 Public Function GetParent(
     ByVal hWnd As IntPtr) As IntPtr
 End Function
