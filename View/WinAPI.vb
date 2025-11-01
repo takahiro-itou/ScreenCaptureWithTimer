@@ -34,6 +34,13 @@ Public Function GetWindowRect(
 End Function
 
 <DllImport("user32.dll")> _
+Public Function GetWindowText(
+    ByVal hWnd As IntPtr,
+    ByVal lpString As System.Text.StringBuilder,
+    ByVal nMaxCount As Integer) As Integer
+End Function
+
+<DllImport("user32.dll")> _
 Public Function WindowFromPoint(
     ByVal pt As System.Drawing.Point) As IntPtr
 End Function
