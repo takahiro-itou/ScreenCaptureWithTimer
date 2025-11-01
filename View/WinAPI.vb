@@ -23,7 +23,7 @@ Public Function GetDC(ByVal hWnd As IntPtr) As IntPtr
 End Function
 
 <DllImport("user32.dll")> _
-Public Function ReleasetDC(
+Public Function ReleaseDC(
         ByVal hWnd As IntPtr, ByVal hDC As IntPtr) As IntPtr
 End Function
 
