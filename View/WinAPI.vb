@@ -19,11 +19,11 @@ Public Function BitBlt(
 End Function
 
 <DllImport("user32.dll")> _
-Public Functioni GetDC(ByVal hWnd As IntPtr) As IntPtr
+Public Function GetDC(ByVal hWnd As IntPtr) As IntPtr
 End Function
 
 <DllImport("user32.dll")> _
-Public Functioni ReleasetDC(
+Public Function ReleasetDC(
         ByVal hWnd As IntPtr, ByVal hDC As IntPtr) As IntPtr
 End Function
 
