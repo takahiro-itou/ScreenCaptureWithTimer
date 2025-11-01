@@ -1,4 +1,5 @@
-﻿Public Class MainView
+﻿
+Public Class MainView
 
 
 Private m_nextNumber As Integer
@@ -31,9 +32,8 @@ Dim hDstDC As IntPtr
     ReleaseDC(IntPtr.Zero, hDisplayDC)
 
     imgBuffer.Save(fileName)
-
-    imgBuffer.Save("Test.jpg", ImageFormat.Jpeg)
-    imgBuffer.Save("Test.bmp", ImageFormat.Bmp)
+    imgBuffer.Save("Test.jpg", System.Drawing.Imaging.ImageFormat.Jpeg)
+    imgBuffer.Save("Test.bmp", System.Drawing.Imaging.ImageFormat.Bmp)
 
     imgCanvas = New System.Drawing.Bitmap(
             imgBuffer, picView.Width, picView.Height)
