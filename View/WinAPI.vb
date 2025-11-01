@@ -23,11 +23,6 @@ Public Function GetDC(ByVal hWnd As IntPtr) As IntPtr
 End Function
 
 <DllImport("user32.dll")> _
-Public Function ReleaseDC(
-    ByVal hWnd As IntPtr, ByVal hDC As IntPtr) As IntPtr
-End Function
-
-<DllImport("user32.dll")> _
 Public Function GetWindowRect(
     ByVal hWnd As IntPtr,
     ByRef lpRect As System.Drawing.Rectangle) As Boolean
@@ -38,6 +33,11 @@ Public Function GetWindowText(
     ByVal hWnd As IntPtr,
     ByVal lpString As System.Text.StringBuilder,
     ByVal nMaxCount As Integer) As Integer
+End Function
+
+<DllImport("user32.dll")> _
+Public Function ReleaseDC(
+    ByVal hWnd As IntPtr, ByVal hDC As IntPtr) As IntPtr
 End Function
 
 <DllImport("user32.dll")> _
