@@ -23,6 +23,11 @@ Public Function GetDC(ByVal hWnd As IntPtr) As IntPtr
 End Function
 
 <DllImport("user32.dll")> _
+Public Function GetParent(
+    ByVal hWnd As IntPtr) As IntPtr
+End Function
+
+<DllImport("user32.dll")> _
 Public Function GetWindowRect(
     ByVal hWnd As IntPtr,
     ByRef lpRect As System.Drawing.Rectangle) As Boolean
