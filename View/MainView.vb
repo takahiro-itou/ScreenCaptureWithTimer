@@ -55,7 +55,7 @@ End Sub
 
 
 Private Sub btnRunStart_Click(sender As Object, e As EventArgs) Handles _
-            btnRunStart.Click
+            btnRun.Click
 ''--------------------------------------------------------------------
 ''    「実行」ボタンのクリックイベントハンドラ。
 ''
