@@ -148,7 +148,7 @@ Partial Class MainView
         '
         resources.ApplyResources(txbRect, "txbRect")
         txbRect.ButtonText = "..."
-        txbRectt.LabelCaption = "Src Rect:"
+        txbRect.LabelCaption = "Src Rect:"
         txbRect.Name = "txbRect"
 
         '
