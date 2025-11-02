@@ -113,21 +113,26 @@ Partial Class MainView
         grpControl.TabStop = False
 
         '
-        ' updInterval
-        '
-        resources.ApplyResources(updInterval, "updInterval")
-        updInterval.Maximum = New Decimal(New Integer() {65535, 0, 0, 0})
-        updInterval.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        updInterval.Name = "updInterval"
-        updInterval.Value = New Decimal(New Integer() {2000, 0, 0, 0})
-
-        '
         ' txbWnd
         '
         resources.ApplyResources(txbWnd, "txbWnd")
         txbWnd.ButtonText = "..."
         txbWnd.LabelCaption = "&HWND:"
         txbWnd.Name = "txbWnd"
+
+        '
+        ' btnDesktop
+        '
+        resources.ApplyResources(btnDesktop, "btnDesktop")
+        btnDesktop.Name = "btnDesktop"
+        btnDesktop.UseVisualStyleBackColor = True
+
+        '
+        ' btnWndOK
+        '
+        resources.ApplyResources(btnWndOK, "btnWndOK")
+        btnWndOK.Name = "btnWndOK"
+        btnWndOK.UseVisualStyleBackColor = True
 
         '
         ' txbOutput
@@ -142,6 +147,15 @@ Partial Class MainView
         '
         resources.ApplyResources(label1, "label1")
         label1.Name = "label1"
+
+        '
+        ' updInterval
+        '
+        resources.ApplyResources(updInterval, "updInterval")
+        updInterval.Maximum = New Decimal(New Integer() {65535, 0, 0, 0})
+        updInterval.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        updInterval.Name = "updInterval"
+        updInterval.Value = New Decimal(New Integer() {2000, 0, 0, 0})
 
         '
         ' txbRect
