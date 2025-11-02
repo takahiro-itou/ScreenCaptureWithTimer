@@ -198,6 +198,34 @@
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 
+  <data name="grpControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="grpControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 24</value>
+  </data>
+  <data name="grpControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>528, 128</value>
+  </data>
+  <data name="grpControl.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="grpControl.Text" xml:space="preserve">
+    <value>Control</value>
+  </data>
+  <data name="&gt;&gt;grpControl.Name" xml:space="preserve">
+    <value>grpControl</value>
+  </data>
+  <data name="&gt;&gt;grpControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grpControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 44</value>
   </data>
@@ -391,6 +419,96 @@
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 
+  <data name="txbOutput.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txbOutput.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 9pt</value>
+  </data>
+  <data name="txbOutput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 40</value>
+  </data>
+  <data name="txbOutput.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="txbOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>512, 20</value>
+  </data>
+  <data name="txbOutput.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;txbOutput.Name" xml:space="preserve">
+    <value>txbOutput</value>
+  </data>
+  <data name="&gt;&gt;txbOutput.Parent" xml:space="preserve">
+    <value>grpControl</value>
+  </data>
+  <data name="&gt;&gt;txbOutput.Type" xml:space="preserve">
+    <value>WinFormsControl.TextBoxWithButton, WinFormsControl, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txbOutput.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+
+  <data name="txbRect.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txbRect.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 9pt</value>
+  </data>
+  <data name="txbRect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 64</value>
+  </data>
+  <data name="txbRect.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="txbRect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>336, 20</value>
+  </data>
+  <data name="txbRect.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;txbRect.Name" xml:space="preserve">
+    <value>txbRect</value>
+  </data>
+  <data name="&gt;&gt;txbRect.Parent" xml:space="preserve">
+    <value>grpControl</value>
+  </data>
+  <data name="&gt;&gt;txbRect.Type" xml:space="preserve">
+    <value>WinFormsControl.TextBoxWithButton, WinFormsControl, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txbRect.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+
+  <data name="txbWnd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txbWnd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>ＭＳ ゴシック, 9pt</value>
+  </data>
+  <data name="txbWnd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="txbWnd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="txbWnd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 20</value>
+  </data>
+  <data name="&gt;&gt;txbWnd.Name" xml:space="preserve">
+    <value>txbWnd</value>
+  </data>
+  <data name="&gt;&gt;txbWnd.Parent" xml:space="preserve">
+    <value>grpControl</value>
+  </data>
+  <data name="&gt;&gt;txbWnd.Type" xml:space="preserve">
+    <value>WinFormsControl.TextBoxWithButton, WinFormsControl, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txbWnd.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+
   <data name="txtOutput.Location" type="System.Drawing.Point, System.Drawing">
     <value>96, 72</value>
   </data>
@@ -439,6 +557,31 @@
   </data>
   <data name="&gt;&gt;txtWnd.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+
+  <data name="updInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 64</value>
+  </data>
+  <data name="updInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 19</value>
+  </data>
+  <data name="updInterval.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="updInterval.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;updInterval.Name" xml:space="preserve">
+    <value>updInterval</value>
+  </data>
+  <data name="&gt;&gt;updInterval.Parent" xml:space="preserve">
+    <value>grpControl</value>
+  </data>
+  <data name="&gt;&gt;updInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;updInterval.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
 
 </root>
