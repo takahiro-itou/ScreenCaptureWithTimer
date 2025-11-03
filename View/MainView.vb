@@ -7,6 +7,7 @@ Private m_nextNumber As Integer
 
 Private Function captureScreen(
     ByVal hWnd As IntPtr,
+    ByVal srcRect As System.Drawing.Rectangle
     ByVal fileName As String) As Boolean
 ''--------------------------------------------------------------------
 ''    指定したウィンドウのキャプチャを行う
@@ -19,15 +20,11 @@ Dim hDstDC As IntPtr
 
     hDisplayDC = GetDC(hWnd)
 
-    imgBuffer = New System.Drawing.Bitmap(
-            Screen.PrimaryScreen.Bounds.Width,
-            Screen.PrimaryScreen.Bounds.Height)
+    imgBuffer = New System.Drawing.Bitmap(srcRect.Width, srcRect.Height)
     grpBuffer = System.Drawing.Graphics.FromImage(imgBuffer)
 
     hDstDC = grpBuffer.GetHdc()
-    BitBlt(hDstDC, 0, 0,
-           Screen.PrimaryScreen.Bounds.Width,
-           Screen.PrimaryScreen.Bounds.Height,
+    BitBlt(hDstDC, 0, 0, srcRect.Width, srcRect.Height,
            hDisplayDC, 0, 0, SRCCOPY)
     grpBuffer.ReleaseHdc(hDstDC)
     ReleaseDC(IntPtr.Zero, hDisplayDC)
@@ -115,7 +112,7 @@ Private Sub tmrSnap_Tick(sender As Object, e As EventArgs) Handles _
 ''    「タイマー」のイベントハンドラ
 ''--------------------------------------------------------------------
 
-    captureScreen(IntPtr.Zero, "Test.png")
+    captureScreen(IntPtr.Zero, Screen.PrimaryScreen.Bounds, "Test.png")
 End Sub
 
 
