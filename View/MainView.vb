@@ -118,6 +118,25 @@ Private Sub tmrSnap_Tick(sender As Object, e As EventArgs) Handles _
 End Sub
 
 
+Private Sub txbRect_ButtonClick(sender As Object, e As EventArgs) Handles _
+            txbRect.ButtonClick
+''--------------------------------------------------------------------
+''    「Src Rect」ボックスのボタンクリックイベントハンドラ。
+''--------------------------------------------------------------------
+    Dim f As WinFormsControl.RectSelectForm
+
+    f = New WinFormsControl.RectSelectForm
+    With f
+        .ShowDialog()
+        If .DialogResult = System.Windows.Forms.DialogResult.OK Then
+            txbRect.Text = $"{ .lastRect.Left}, { .lastRect.Top}, { .lastRect.Width}, { .lastRect.Height}"
+        End If
+        .Dispose()
+    End With
+
+End Sub
+
+
 Private Sub txbWnd_ButtonClick(sender As Object, e As EventArgs) Handles _
             txbWnd.ButtonClick
 ''--------------------------------------------------------------------
