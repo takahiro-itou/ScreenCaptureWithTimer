@@ -94,4 +94,15 @@ Private Sub tmrSnap_Tick(sender As Object, e As EventArgs) Handles _
     captureScreen("Test.png")
 End Sub
 
+
+Private Sub txbWnd_ButtonClick(sender As Object, e As EventArgs) Handles _
+            txbWnd.ButtonClick
+''--------------------------------------------------------------------
+''    「HWND」ボックスのボタンクリックイベントハンドラ。
+''--------------------------------------------------------------------
+    picView.Image = Nothing
+    Me.Capture = True
+    Me.Text = "Now Capture"
+End Sub
+
 End Class
