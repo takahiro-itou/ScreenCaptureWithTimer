@@ -1,0 +1,3 @@
+[submodule "WinFormsControl"]
+	path = WinFormsControl
+	url  = ../WinFormsControlLibrary.git

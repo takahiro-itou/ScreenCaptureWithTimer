@@ -31,19 +31,22 @@ Partial Class MainView
         tmrSnap = New Timer(components)
         dlgSave = New SaveFileDialog()
 
+        grpControl = New GroupBox()
+        txbWnd = New WinFormsControl.TextBoxWithButton()
+        btnDesktop = New Button()
+        btnWndOK = New Button()
+        txbOutput = New WinFormsControl.TextBoxWithButton()
         label1 = New Label()
-        txtWnd = New TextBox()
-        btnWnd = New Button()
-
-        label2 = New Label()
-        txtOutput = New TextBox()
-        btnOutput = New Button()
+        updInterval = New NumericUpDown()
+        txbRect = New WinFormsControl.TextBoxWithButton()
 
         btnRun = New Button()
         btnPause = New Button()
         picView = New PictureBox()
 
         mnuMain.SuspendLayout()
+        grpControl.SuspendLayout()
+        CType(updInterval, ComponentModel.ISupportInitialize).BeginInit()
         CType(picView, ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
 
@@ -94,39 +97,73 @@ Partial Class MainView
         dlgSave.FileName = "dlgSave"
 
         '
+        ' grpControl
+        '
+        resources.ApplyResources(grpControl, "grpControl")
+        grpControl.Controls.Add(txbWnd)
+        grpControl.Controls.Add(btnDesktop)
+        grpControl.Controls.Add(btnWndOK)
+        grpControl.Controls.Add(txbOutput)
+        grpControl.Controls.Add(label1)
+        grpControl.Controls.Add(updInterval)
+        grpControl.Controls.Add(txbRect)
+        grpControl.Controls.Add(btnRun)
+        grpControl.Controls.Add(btnPause)
+        grpControl.Name = "grpControl"
+        grpControl.TabStop = False
+
+        '
+        ' txbWnd
+        '
+        resources.ApplyResources(txbWnd, "txbWnd")
+        txbWnd.ButtonText = "..."
+        txbWnd.LabelCaption = "&HWND:"
+        txbWnd.Name = "txbWnd"
+
+        '
+        ' btnDesktop
+        '
+        resources.ApplyResources(btnDesktop, "btnDesktop")
+        btnDesktop.Name = "btnDesktop"
+        btnDesktop.UseVisualStyleBackColor = True
+
+        '
+        ' btnWndOK
+        '
+        resources.ApplyResources(btnWndOK, "btnWndOK")
+        btnWndOK.Name = "btnWndOK"
+        btnWndOK.UseVisualStyleBackColor = True
+
+        '
+        ' txbOutput
+        '
+        resources.ApplyResources(txbOutput, "txbOutput")
+        txbOutput.ButtonText = "..."
+        txbOutput.LabelCaption = "&Output:"
+        txbOutput.Name = "txbOutput"
+
+        '
         ' label1
         '
         resources.ApplyResources(label1, "label1")
         label1.Name = "label1"
-        '
-        ' txtWnd
-        '
-        resources.ApplyResources(txtWnd, "txtWnd")
-        txtWnd.Name = "txtWnd"
-        '
-        ' btnWnd
-        '
-        resources.ApplyResources(btnWnd, "btnWnd")
-        btnWnd.Name = "btnWnd"
-        btnWnd.UseVisualStyleBackColor = True
 
         '
-        ' label2
+        ' updInterval
         '
-        resources.ApplyResources(label2, "label2")
-        label2.Name = "label2"
+        resources.ApplyResources(updInterval, "updInterval")
+        updInterval.Maximum = New Decimal(New Integer() {65535, 0, 0, 0})
+        updInterval.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        updInterval.Name = "updInterval"
+        updInterval.Value = New Decimal(New Integer() {2000, 0, 0, 0})
+
         '
-        ' txtOutput
+        ' txbRect
         '
-        txtOutput.BackColor = SystemColors.Window
-        resources.ApplyResources(txtOutput, "txtOutput")
-        txtOutput.Name = "txtOutput"
-        '
-        ' btnOutput
-        '
-        resources.ApplyResources(btnOutput, "btnOutput")
-        btnOutput.Name = "btnOutput"
-        btnOutput.UseVisualStyleBackColor = True
+        resources.ApplyResources(txbRect, "txbRect")
+        txbRect.ButtonText = "..."
+        txbRect.LabelCaption = "Src Rect:"
+        txbRect.Name = "txbRect"
 
         '
         ' btnRun
@@ -156,20 +193,15 @@ Partial Class MainView
         AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.Controls.Add(mnuMain)
-        Me.Controls.Add(label1)
-        Me.Controls.Add(txtWnd)
-        Me.Controls.Add(btnWnd)
-        Me.Controls.Add(label2)
-        Me.Controls.Add(txtOutput)
-        Me.Controls.Add(btnOutput)
-        Me.Controls.Add(btnRun)
-        Me.Controls.Add(btnPause)
+        Me.Controls.Add(grpControl)
         Me.Controls.Add(picView)
         Me.MainMenuStrip = mnuMain
         Me.Name = "MainView"
 
         mnuMain.ResumeLayout(False)
         mnuMain.PerformLayout()
+        grpControl.ResumeLayout(False)
+        CType(updInterval, ComponentModel.ISupportInitialize).EndInit()
         CType(picView, ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -185,16 +217,17 @@ Partial Class MainView
     Friend WithEvents tmrSnap As Timer
     Friend WithEvents dlgSave As SaveFileDialog
 
+    Friend WithEvents grpControl As GroupBox
+    Friend WithEvents txbWnd As WinFormsControl.TextBoxWithButton
+    Friend WithEvents btnDesktop As Button
+    Friend WithEvents btnWndOK As Button
+    Friend WithEvents txbOutput As WinFormsControl.TextBoxWithButton
     Friend WithEvents label1 As Label
-    Friend WithEvents txtWnd As TextBox
-    Friend WithEvents btnWnd As Button
-
-    Friend WithEvents label2 As Label
-    Friend WithEvents txtOutput As TextBox
-    Friend WithEvents btnOutput As Button
-
+    Friend WithEvents updInterval As NumericUpDown
+    Friend WithEvents txbRect As WinFormsControl.TextBoxWithButton
     Friend WithEvents btnRun As Button
     Friend WithEvents btnPause As Button
+
     Friend WithEvents picView As PictureBox
 
 End Class
