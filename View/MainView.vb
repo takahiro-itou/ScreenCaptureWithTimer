@@ -7,7 +7,7 @@ Private m_nextNumber As Integer
 
 Private Function captureScreen(
     ByVal hWnd As IntPtr,
-    ByVal srcRect As System.Drawing.Rectangle
+    ByVal srcRect As System.Drawing.Rectangle,
     ByVal fileName As String) As Boolean
 ''--------------------------------------------------------------------
 ''    指定したウィンドウのキャプチャを行う
