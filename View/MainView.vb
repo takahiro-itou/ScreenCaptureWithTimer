@@ -54,6 +54,29 @@ Private Sub MainView_Load(sender As Object, e As EventArgs) Handles _
 End Sub
 
 
+Private Sub MainView_MouseDown(sender As Object, e As EventArgs) Handles _
+            Me.MouseDown
+''--------------------------------------------------------------------
+''    フォームのマウスダウンイベントハンドラ。
+''--------------------------------------------------------------------
+Dim hWnd As IntPtr
+Dim rectSrc As System.Drawing.Rectangle
+Dim sbWndName As System.Text.StringBuilder
+
+    Me.Capture = False
+
+    ' マウスの位置からウィンドウハンドルを取得する
+    hWnd = WindowFromPoint(Cursor.Position)
+    GetWindowRect(hWnd, rectSrc)
+
+    ' ウィンドウキャプションを取得する
+    sbWndName = New System.Text.StringBuilder(65536)
+    GetWindowText(hWnd, sbWndName, 65536)
+    Me.txbWnd.Text = $"{hWnd}:${sbWndName}"
+    Me.txbRect.Text = $"{rectSrc.Left}, {rectSrc.Top}, {rectSrc.Width}, {rectSrc.Height}"
+End Sub
+
+
 Private Sub btnRunStart_Click(sender As Object, e As EventArgs) Handles _
             btnRun.Click
 ''--------------------------------------------------------------------
