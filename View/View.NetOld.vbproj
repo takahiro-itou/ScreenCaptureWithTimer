@@ -10,7 +10,6 @@
     <StartupObject>ViewVb.My.MyApplication</StartupObject>
     <TargetFrameworks>
       net6.0-windows;
-      net35;
       net48;
     </TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
