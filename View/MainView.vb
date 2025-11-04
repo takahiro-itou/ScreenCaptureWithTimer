@@ -2,8 +2,10 @@
 Public Class MainView
 
 
+Private m_outPrefix As String
 Private m_nextNumber As Integer
-Private m_hWndTarget As IntPtr
+Private m_hSrcWnd As IntPtr
+Private m_srcRect As System.Drawing.Rectangle
 
 
 Private Function captureScreen(
