@@ -10,7 +10,6 @@
     <StartupObject>ViewVb.My.MyApplication</StartupObject>
     <TargetFrameworks>
       net6.0-windows;
-      net35;
       net48;
     </TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
@@ -22,6 +21,10 @@
     <Import Include="System.Data" />
     <Import Include="System.Drawing" />
     <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WinFormsControl\WinFormsControl.NetOld.csproj" />
   </ItemGroup>
 
   <ItemGroup>
