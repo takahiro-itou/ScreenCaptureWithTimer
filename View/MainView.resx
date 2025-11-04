@@ -152,13 +152,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnRectOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>456, 16</value>
+    <value>456, 64</value>
   </data>
   <data name="btnRectOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
   </data>
   <data name="btnRectOK.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>7</value>
   </data>
   <data name="btnRectOK.Text" xml:space="preserve">
     <value>OK</value>
@@ -173,7 +173,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnRectOK.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>7</value>
   </data>
 
   <data name="btnRun.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -489,7 +489,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="txbRect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 20</value>
+    <value>264, 20</value>
   </data>
   <data name="txbRect.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
