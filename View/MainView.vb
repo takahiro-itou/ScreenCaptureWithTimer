@@ -42,6 +42,21 @@ Dim hDstDC As IntPtr
 End Function
 
 
+Private Function setSourceWindow(ByVal strWnd As String) As Boolean
+''--------------------------------------------------------------------
+''    ソースウィンドウを設定する。
+''--------------------------------------------------------------------
+
+End Function
+
+Private Function setSourceWindow(ByVal hWnd As IntPtr) As Boolean
+''--------------------------------------------------------------------
+''    ソースウィンドウを設定する。
+      ''--------------------------------------------------------------------
+
+End Function
+
+
 Private Sub MainView_Load(sender As Object, e As EventArgs) Handles _
             MyBase.Load
 ''--------------------------------------------------------------------
@@ -100,6 +115,21 @@ Private Sub btnRunStart_Click(sender As Object, e As EventArgs) Handles _
 
     tmrSnap.Enabled = True
 End Sub
+
+
+Private Sub btnWndOK_Click(sender As Object, e As EventArgs) Handles _
+            btnWndOK.Click
+''--------------------------------------------------------------------
+''    ボタンのクリックイベントハンドラ。
+''
+''    テキストに入力した HWND をパラメータにセットする
+''--------------------------------------------------------------------
+Dim parts1 As String()
+
+    parts1 = txbWnd.Text.Split(New String() {":"}, 2, StringSplitOptions.None)
+    setSourceWindow(parts1(0))
+End Sub
+
 
 Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles _
             mnuFileExit.Click
