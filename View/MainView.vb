@@ -3,6 +3,7 @@ Public Class MainView
 
 
 Private m_nextNumber As Integer
+Private m_hWndTarget As IntPtr
 
 
 Private Function captureScreen(
