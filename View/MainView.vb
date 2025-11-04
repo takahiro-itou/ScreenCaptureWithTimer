@@ -52,7 +52,7 @@ End Function
 Private Function setSourceWindow(ByVal hWnd As IntPtr) As Boolean
 ''--------------------------------------------------------------------
 ''    ソースウィンドウを設定する。
-      ''--------------------------------------------------------------------
+''--------------------------------------------------------------------
 
 End Function
 
@@ -117,6 +117,18 @@ Private Sub btnRunStart_Click(sender As Object, e As EventArgs) Handles _
 End Sub
 
 
+Private Sub btnPause_Click(sender As Object, e As EventArgs) Handles _
+            btnPause.Click
+''--------------------------------------------------------------------
+''    ボタンのクリックイベントハンドラ。
+''
+''    一時停止する
+''--------------------------------------------------------------------
+
+    tmrSnap.Enabled = False
+End Sub
+
+
 Private Sub btnWndOK_Click(sender As Object, e As EventArgs) Handles _
             btnWndOK.Click
 ''--------------------------------------------------------------------
@@ -138,6 +150,16 @@ Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles _
 ''--------------------------------------------------------------------
 
     Application.Exit()
+End Sub
+
+
+Private Sub mnuRunPause_Click(sender As Object, e As EventArgs) Handles _
+            mnuRunPause.Click
+''--------------------------------------------------------------------
+''    メニュー「実行」－「一時停止」
+''--------------------------------------------------------------------
+
+    tmrSnap.Enabled = False
 End Sub
 
 
