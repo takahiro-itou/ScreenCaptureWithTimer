@@ -75,6 +75,20 @@ Dim sbWndName As System.Text.StringBuilder
 End Sub
 
 
+Private Sub btnDesktop_Click(sender As Object, e As EventArgs) Handles _
+            btnDesktop.Click
+''--------------------------------------------------------------------
+''    「デスクトップ」ボタンのクリックイベントハンドラ。
+''
+''    デスクトップの HWND をテキストボックスに表示する。
+''--------------------------------------------------------------------
+Dim hWndDesktop As IntPtr
+
+    hWndDesktop = GetDesktopWindow()
+    txbWnd.Text = $"{hWndDesktop}"
+End Sub
+
+
 Private Sub btnRunStart_Click(sender As Object, e As EventArgs) Handles _
             btnRun.Click
 ''--------------------------------------------------------------------
