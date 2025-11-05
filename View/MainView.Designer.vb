@@ -39,6 +39,7 @@ Partial Class MainView
         label1 = New Label()
         updInterval = New NumericUpDown()
         txbRect = New WinFormsControl.TextBoxWithButton()
+        btnRectOK = New Button()
 
         btnRun = New Button()
         btnPause = New Button()
@@ -107,6 +108,7 @@ Partial Class MainView
         grpControl.Controls.Add(label1)
         grpControl.Controls.Add(updInterval)
         grpControl.Controls.Add(txbRect)
+        grpControl.Controls.Add(btnRectOK)
         grpControl.Controls.Add(btnRun)
         grpControl.Controls.Add(btnPause)
         grpControl.Name = "grpControl"
@@ -164,6 +166,12 @@ Partial Class MainView
         txbRect.ButtonText = "..."
         txbRect.LabelCaption = "Src Rect:"
         txbRect.Name = "txbRect"
+        '
+        ' btnRectOK
+        '
+        resources.ApplyResources(btnRectOK, "btnRectOK")
+        btnRectOK.Name = "btnRectOK"
+        btnRectOK.UseVisualStyleBackColor = True
 
         '
         ' btnRun
@@ -225,6 +233,7 @@ Partial Class MainView
     Friend WithEvents label1 As Label
     Friend WithEvents updInterval As NumericUpDown
     Friend WithEvents txbRect As WinFormsControl.TextBoxWithButton
+    Friend WithEvents btnRectOK As Button
     Friend WithEvents btnRun As Button
     Friend WithEvents btnPause As Button
 
