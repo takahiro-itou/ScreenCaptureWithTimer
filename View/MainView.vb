@@ -44,6 +44,39 @@ Dim hDstDC As IntPtr
 End Function
 
 
+Private Function captureScreen() As Boolean
+''--------------------------------------------------------------------
+''    ウィンドウのキャプチャを行う
+''--------------------------------------------------------------------
+
+End Function
+
+
+Private Function initializeCapture() As Boolean
+''--------------------------------------------------------------------
+''    キャプチャの初期化を行う
+''--------------------------------------------------------------------
+
+End Function
+
+
+Private Function setSourceRect(
+    ByVal srcRect As System.Drawing.Rectangle) As Boolean
+''--------------------------------------------------------------------
+''    ソース矩形を設定する。
+''--------------------------------------------------------------------
+
+End Function
+
+
+Private Function setSourceRect(ByVal strRect As String) As Boolean
+''--------------------------------------------------------------------
+''    ソース矩形を設定する。
+''--------------------------------------------------------------------
+
+End Function
+
+
 Private Function setSourceWindow(ByVal strWnd As String) As Boolean
 ''--------------------------------------------------------------------
 ''    ソースウィンドウを設定する。
