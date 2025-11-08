@@ -104,7 +104,16 @@ Private Sub showSourceWidow(ByVal hWnd As IntPtr)
 ''--------------------------------------------------------------------
 ''    ソースウィンドウの情報を表示する。
 ''--------------------------------------------------------------------
+Dim sbWndName As System.Text.StringBuilder
+Dim strWnd As String
 
+    strWnd = hWnd.ToString("X")
+
+    ' ウィンドウキャプションを取得する
+    sbWndName = New System.Text.StringBuilder(65536)
+    GetWindowText(hWnd, sbWndName, 65536)
+
+    Me.txbWnd.Text = $"0x{strWnd}:{sbWndName}"
 End Sub
 
 
@@ -135,9 +144,7 @@ Dim sbWndName As System.Text.StringBuilder
     GetWindowRect(hWnd, rectSrc)
 
     ' ウィンドウキャプションを取得する
-    sbWndName = New System.Text.StringBuilder(65536)
-    GetWindowText(hWnd, sbWndName, 65536)
-    Me.txbWnd.Text = $"{hWnd}:${sbWndName}"
+    showSourceWidow(hWnd)
     Me.txbRect.Text = $"{rectSrc.Left}, {rectSrc.Top}, {rectSrc.Width}, {rectSrc.Height}"
 End Sub
 
