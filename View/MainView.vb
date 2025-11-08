@@ -2,7 +2,10 @@
 Public Class MainView
 
 
+Private m_outPrefix As String
 Private m_nextNumber As Integer
+Private m_hSrcWnd As IntPtr
+Private m_srcRect As System.Drawing.Rectangle
 
 
 Private Function captureScreen(
@@ -41,6 +44,54 @@ Dim hDstDC As IntPtr
 End Function
 
 
+Private Function captureScreen() As Boolean
+''--------------------------------------------------------------------
+''    ウィンドウのキャプチャを行う
+''--------------------------------------------------------------------
+
+End Function
+
+
+Private Function initializeCapture() As Boolean
+''--------------------------------------------------------------------
+''    キャプチャの初期化を行う
+''--------------------------------------------------------------------
+
+End Function
+
+
+Private Function setSourceRect(
+    ByVal srcRect As System.Drawing.Rectangle) As Boolean
+''--------------------------------------------------------------------
+''    ソース矩形を設定する。
+''--------------------------------------------------------------------
+
+End Function
+
+
+Private Function setSourceRect(ByVal strRect As String) As Boolean
+''--------------------------------------------------------------------
+''    ソース矩形を設定する。
+''--------------------------------------------------------------------
+
+End Function
+
+
+Private Function setSourceWindow(ByVal strWnd As String) As Boolean
+''--------------------------------------------------------------------
+''    ソースウィンドウを設定する。
+''--------------------------------------------------------------------
+
+End Function
+
+Private Function setSourceWindow(ByVal hWnd As IntPtr) As Boolean
+''--------------------------------------------------------------------
+''    ソースウィンドウを設定する。
+''--------------------------------------------------------------------
+
+End Function
+
+
 Private Sub MainView_Load(sender As Object, e As EventArgs) Handles _
             MyBase.Load
 ''--------------------------------------------------------------------
@@ -75,6 +126,20 @@ Dim sbWndName As System.Text.StringBuilder
 End Sub
 
 
+Private Sub btnDesktop_Click(sender As Object, e As EventArgs) Handles _
+            btnDesktop.Click
+''--------------------------------------------------------------------
+''    「デスクトップ」ボタンのクリックイベントハンドラ。
+''
+''    デスクトップの HWND をテキストボックスに表示する。
+''--------------------------------------------------------------------
+Dim hWndDesktop As IntPtr
+
+    hWndDesktop = GetDesktopWindow()
+    txbWnd.Text = $"{hWndDesktop}"
+End Sub
+
+
 Private Sub btnRunStart_Click(sender As Object, e As EventArgs) Handles _
             btnRun.Click
 ''--------------------------------------------------------------------
@@ -86,6 +151,33 @@ Private Sub btnRunStart_Click(sender As Object, e As EventArgs) Handles _
     tmrSnap.Enabled = True
 End Sub
 
+
+Private Sub btnPause_Click(sender As Object, e As EventArgs) Handles _
+            btnPause.Click
+''--------------------------------------------------------------------
+''    ボタンのクリックイベントハンドラ。
+''
+''    一時停止する
+''--------------------------------------------------------------------
+
+    tmrSnap.Enabled = False
+End Sub
+
+
+Private Sub btnWndOK_Click(sender As Object, e As EventArgs) Handles _
+            btnWndOK.Click
+''--------------------------------------------------------------------
+''    ボタンのクリックイベントハンドラ。
+''
+''    テキストに入力した HWND をパラメータにセットする
+''--------------------------------------------------------------------
+Dim parts1 As String()
+
+    parts1 = txbWnd.Text.Split(New String() {":"}, 2, StringSplitOptions.None)
+    setSourceWindow(parts1(0))
+End Sub
+
+
 Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles _
             mnuFileExit.Click
 ''--------------------------------------------------------------------
@@ -93,6 +185,16 @@ Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles _
 ''--------------------------------------------------------------------
 
     Application.Exit()
+End Sub
+
+
+Private Sub mnuRunPause_Click(sender As Object, e As EventArgs) Handles _
+            mnuRunPause.Click
+''--------------------------------------------------------------------
+''    メニュー「実行」－「一時停止」
+''--------------------------------------------------------------------
+
+    tmrSnap.Enabled = False
 End Sub
 
 
