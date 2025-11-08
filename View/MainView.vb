@@ -32,9 +32,9 @@ Dim hDstDC As IntPtr
     grpBuffer.ReleaseHdc(hDstDC)
     ReleaseDC(IntPtr.Zero, hDisplayDC)
 
-    imgBuffer.Save(fileName)
-    imgBuffer.Save("Test.jpg", System.Drawing.Imaging.ImageFormat.Jpeg)
-    imgBuffer.Save("Test.bmp", System.Drawing.Imaging.ImageFormat.Bmp)
+    imgBuffer.Save($"{fileName}.png")
+    imgBuffer.Save($"{fileName}.jpg", System.Drawing.Imaging.ImageFormat.Jpeg)
+    imgBuffer.Save($"{fileName}.bmp", System.Drawing.Imaging.ImageFormat.Bmp)
 
     imgCanvas = New System.Drawing.Bitmap(
             imgBuffer, picView.Width, picView.Height)
@@ -214,7 +214,7 @@ Private Sub tmrSnap_Tick(sender As Object, e As EventArgs) Handles _
 ''    「タイマー」のイベントハンドラ
 ''--------------------------------------------------------------------
 
-    captureScreen(IntPtr.Zero, Screen.PrimaryScreen.Bounds, "Test.png")
+    captureScreen(IntPtr.Zero, Screen.PrimaryScreen.Bounds, "Test")
 End Sub
 
 
