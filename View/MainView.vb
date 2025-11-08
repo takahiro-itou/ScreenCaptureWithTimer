@@ -92,6 +92,22 @@ Private Function setSourceWindow(ByVal hWnd As IntPtr) As Boolean
 End Function
 
 
+Private Sub showSourceRect(ByVal hWnd As IntPtr)
+''--------------------------------------------------------------------
+''    ソース矩形の情報を表示する。
+''--------------------------------------------------------------------
+
+End Sub
+
+
+Private Sub showSourceWidow(ByVal hWnd As IntPtr)
+''--------------------------------------------------------------------
+''    ソースウィンドウの情報を表示する。
+''--------------------------------------------------------------------
+
+End Sub
+
+
 Private Sub MainView_Load(sender As Object, e As EventArgs) Handles _
             MyBase.Load
 ''--------------------------------------------------------------------
