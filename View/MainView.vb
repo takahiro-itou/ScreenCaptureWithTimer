@@ -66,6 +66,10 @@ Private Function setSourceRect(
 ''    ソース矩形を設定する。
 ''--------------------------------------------------------------------
 
+    Me.m_srcRect = srcRect
+    showSourceRect(Me.m_srcRect)
+    Return  True
+
 End Function
 
 
@@ -92,10 +96,12 @@ Private Function setSourceWindow(ByVal hWnd As IntPtr) As Boolean
 End Function
 
 
-Private Sub showSourceRect(ByVal hWnd As IntPtr)
+Private Sub showSourceRect(ByVal r As System.Drawing.Rectangle)
 ''--------------------------------------------------------------------
 ''    ソース矩形の情報を表示する。
 ''--------------------------------------------------------------------
+
+    txbRect.Text = $"{r.Left}, {r.Top}, {r.Width}, {r.Height}"
 
 End Sub
 
@@ -246,16 +252,26 @@ Private Sub txbRect_ButtonClick(sender As Object, e As EventArgs) Handles _
 ''--------------------------------------------------------------------
 ''    「Src Rect」ボックスのボタンクリックイベントハンドラ。
 ''--------------------------------------------------------------------
-    Dim f As WinFormsControl.RectSelectForm
+Dim f As WinFormsControl.RectSelectForm
+Dim r As System.Drawing.Rectangle
+Dim dResult As System.Windows.Forms.DialogResult
+Dim bUpdate As Boolean
 
+    bUpdate = False
     f = New WinFormsControl.RectSelectForm
     With f
-        .ShowDialog()
-        If .DialogResult = System.Windows.Forms.DialogResult.OK Then
-            txbRect.Text = $"{ .lastRect.Left}, { .lastRect.Top}, { .lastRect.Width}, { .lastRect.Height}"
+        dResult = .ShowDialog(Me)
+        If dResult = System.Windows.Forms.DialogResult.OK Then
+            bResult = True
+            r = .lastRect
         End If
+        .Close()
         .Dispose()
     End With
+
+    If bUpdate Then
+        setupSourceRect(r)
+    End If
 
 End Sub
 
