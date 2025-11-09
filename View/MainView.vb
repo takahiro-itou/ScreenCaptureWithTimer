@@ -98,6 +98,13 @@ Private Function setSourceWindow(ByVal hWnd As IntPtr) As Boolean
 ''--------------------------------------------------------------------
 ''    ソースウィンドウを設定する。
 ''--------------------------------------------------------------------
+Dim srcRect As System.Drawing.Rectangle
+
+    Me.m_hSrcWnd = hWnd
+    showSourceWindow()
+
+    GetWindowRect(hWnd, srcRect)
+    Return  setSourceRect(srcRect)
 
 End Function
 
