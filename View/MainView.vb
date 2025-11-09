@@ -32,9 +32,9 @@ Dim hDstDC As IntPtr
     grpBuffer.ReleaseHdc(hDstDC)
     ReleaseDC(IntPtr.Zero, hDisplayDC)
 
-    imgBuffer.Save(fileName)
-    imgBuffer.Save("Test.jpg", System.Drawing.Imaging.ImageFormat.Jpeg)
-    imgBuffer.Save("Test.bmp", System.Drawing.Imaging.ImageFormat.Bmp)
+    imgBuffer.Save($"{fileName}.png")
+    imgBuffer.Save($"{fileName}.jpg", System.Drawing.Imaging.ImageFormat.Jpeg)
+    imgBuffer.Save($"{fileName}.bmp", System.Drawing.Imaging.ImageFormat.Bmp)
 
     imgCanvas = New System.Drawing.Bitmap(
             imgBuffer, picView.Width, picView.Height)
@@ -66,12 +66,37 @@ Private Function setSourceRect(
 ''    ソース矩形を設定する。
 ''--------------------------------------------------------------------
 
+    Me.m_srcRect = srcRect
+    showSourceRect(Me.m_srcRect)
+
+    Return  True
 End Function
 
 
 Private Function setSourceRect(ByVal strRect As String) As Boolean
 ''--------------------------------------------------------------------
 ''    ソース矩形を設定する。
+''--------------------------------------------------------------------
+Dim parts1 As String()
+Dim X As Integer
+Dim Y As Integer
+Dim W As Integer
+Dim H As Integer
+
+    parts1 = strRect.Split(New String() {","}, 4, StringSplitOptions.None)
+    X = Val(parts1(0))
+    Y = Val(parts1(1))
+    W = Val(parts1(2))
+    H = Val(parts1(3))
+
+    Return  setSourceRect(
+        New System.Drawing.Rectangle With {.X = X, .Y = Y, .Width = W, .Height = H})
+End Function
+
+
+Private Function setSourceWindow(ByVal hWnd As IntPtr) As Boolean
+''--------------------------------------------------------------------
+''    ソースウィンドウを設定する。
 ''--------------------------------------------------------------------
 
 End Function
@@ -81,15 +106,44 @@ Private Function setSourceWindow(ByVal strWnd As String) As Boolean
 ''--------------------------------------------------------------------
 ''    ソースウィンドウを設定する。
 ''--------------------------------------------------------------------
+Dim x As Integer
+Dim hWnd As IntPtr
 
+    If strWnd = "" Then
+        hWnd = IntPtr.Zero
+    Else
+        x = Convert.ToInt32(strWnd, 16)
+        hWnd = x
+    End If
+
+    Return  setSourceWindow(hWnd)
 End Function
 
-Private Function setSourceWindow(ByVal hWnd As IntPtr) As Boolean
+
+Private Sub showSourceRect(ByVal r As System.Drawing.Rectangle)
 ''--------------------------------------------------------------------
-''    ソースウィンドウを設定する。
+''    ソース矩形の情報を表示する。
 ''--------------------------------------------------------------------
 
-End Function
+    txbRect.Text = $"{r.Left}, {r.Top}, {r.Width}, {r.Height}"
+End Sub
+
+
+Private Sub showSourceWidow(ByVal hWnd As IntPtr)
+''--------------------------------------------------------------------
+''    ソースウィンドウの情報を表示する。
+''--------------------------------------------------------------------
+Dim sbWndName As System.Text.StringBuilder
+Dim strWnd As String
+
+    strWnd = hWnd.ToString("X")
+
+    ' ウィンドウキャプションを取得する
+    sbWndName = New System.Text.StringBuilder(65536)
+    GetWindowText(hWnd, sbWndName, 65536)
+
+    Me.txbWnd.Text = $"0x{strWnd}:{sbWndName}"
+End Sub
 
 
 Private Sub MainView_Load(sender As Object, e As EventArgs) Handles _
@@ -109,20 +163,17 @@ Private Sub MainView_MouseDown(sender As Object, e As EventArgs) Handles _
 ''    フォームのマウスダウンイベントハンドラ。
 ''--------------------------------------------------------------------
 Dim hWnd As IntPtr
-Dim rectSrc As System.Drawing.Rectangle
-Dim sbWndName As System.Text.StringBuilder
+Dim srcRect As System.Drawing.Rectangle
 
     Me.Capture = False
 
     ' マウスの位置からウィンドウハンドルを取得する
     hWnd = WindowFromPoint(Cursor.Position)
-    GetWindowRect(hWnd, rectSrc)
+    GetWindowRect(hWnd, srcRect)
 
     ' ウィンドウキャプションを取得する
-    sbWndName = New System.Text.StringBuilder(65536)
-    GetWindowText(hWnd, sbWndName, 65536)
-    Me.txbWnd.Text = $"{hWnd}:${sbWndName}"
-    Me.txbRect.Text = $"{rectSrc.Left}, {rectSrc.Top}, {rectSrc.Width}, {rectSrc.Height}"
+    showSourceWidow(hWnd)
+    setSourceRect(srcRect)
 End Sub
 
 
@@ -214,7 +265,7 @@ Private Sub tmrSnap_Tick(sender As Object, e As EventArgs) Handles _
 ''    「タイマー」のイベントハンドラ
 ''--------------------------------------------------------------------
 
-    captureScreen(IntPtr.Zero, Screen.PrimaryScreen.Bounds, "Test.png")
+    captureScreen(IntPtr.Zero, Screen.PrimaryScreen.Bounds, "Test")
 End Sub
 
 
@@ -223,16 +274,26 @@ Private Sub txbRect_ButtonClick(sender As Object, e As EventArgs) Handles _
 ''--------------------------------------------------------------------
 ''    「Src Rect」ボックスのボタンクリックイベントハンドラ。
 ''--------------------------------------------------------------------
-    Dim f As WinFormsControl.RectSelectForm
+Dim f As WinFormsControl.RectSelectForm
+Dim r As System.Drawing.Rectangle
+Dim dResult As System.Windows.Forms.DialogResult
+Dim bUpdate As Boolean
 
+    bUpdate = False
     f = New WinFormsControl.RectSelectForm
     With f
-        .ShowDialog()
-        If .DialogResult = System.Windows.Forms.DialogResult.OK Then
-            txbRect.Text = $"{ .lastRect.Left}, { .lastRect.Top}, { .lastRect.Width}, { .lastRect.Height}"
+        dResult = .ShowDialog(Me)
+        If dResult = System.Windows.Forms.DialogResult.OK Then
+            bUpdate = True
+            r = .lastRect
         End If
+        .Close()
         .Dispose()
     End With
+
+    If bUpdate Then
+        setSourceRect(r)
+    End If
 
 End Sub
 
