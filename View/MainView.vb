@@ -262,7 +262,7 @@ Dim bUpdate As Boolean
     With f
         dResult = .ShowDialog(Me)
         If dResult = System.Windows.Forms.DialogResult.OK Then
-            bResult = True
+            bUpdate = True
             r = .lastRect
         End If
         .Close()
@@ -270,7 +270,7 @@ Dim bUpdate As Boolean
     End With
 
     If bUpdate Then
-        setupSourceRect(r)
+        setSourceRect(r)
     End If
 
 End Sub
