@@ -53,6 +53,10 @@ Dim strPath As String
     strPath = $"{Me.m_outPrefix}-{Me.m_nextNumber}"
     Me.m_nextNumber = Me.m_nextNumber + 1
 
+    showSourceWindow(Me.m_hSrcWnd)
+    showSourceRect(Me.m_srcRect)
+    Me.Text = $"Cap to {strPath}"
+
     Return  captureScreen(Me.m_hSrcWnd, Me.m_srcRect, strPath)
 
 End Function
@@ -296,7 +300,7 @@ Private Sub tmrSnap_Tick(sender As Object, e As EventArgs) Handles _
 ''    「タイマー」のイベントハンドラ
 ''--------------------------------------------------------------------
 
-    captureScreen(IntPtr.Zero, Screen.PrimaryScreen.Bounds, "Test")
+    captureScreen()
 End Sub
 
 
