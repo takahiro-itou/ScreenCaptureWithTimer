@@ -144,7 +144,7 @@ Private Sub showSourceRect(ByVal r As System.Drawing.Rectangle)
 End Sub
 
 
-Private Sub showSourceWidow(ByVal hWnd As IntPtr)
+Private Sub showSourceWindow(ByVal hWnd As IntPtr)
 ''--------------------------------------------------------------------
 ''    ソースウィンドウの情報を表示する。
 ''--------------------------------------------------------------------
