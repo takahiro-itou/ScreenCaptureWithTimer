@@ -193,7 +193,7 @@ Dim srcRect As System.Drawing.Rectangle
     GetWindowRect(hWnd, srcRect)
 
     ' ウィンドウキャプションを取得する
-    showSourceWidow(hWnd)
+    showSourceWindow(hWnd)
     setSourceRect(srcRect)
 End Sub
 
