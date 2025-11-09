@@ -90,7 +90,7 @@ Dim H As Integer
     H = Val(parts1(3))
 
     Return  setSourceRect(
-        New System.Drawing.Rectangle With {.X = X, .Y = Y, .Width = W, .Height = J})
+        New System.Drawing.Rectangle With {.X = X, .Y = Y, .Width = W, .Height = H})
 End Function
 
 
