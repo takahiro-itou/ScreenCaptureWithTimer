@@ -94,18 +94,29 @@ Dim H As Integer
 End Function
 
 
-Private Function setSourceWindow(ByVal strWnd As String) As Boolean
+Private Function setSourceWindow(ByVal hWnd As IntPtr) As Boolean
 ''--------------------------------------------------------------------
 ''    ソースウィンドウを設定する。
 ''--------------------------------------------------------------------
 
 End Function
 
-Private Function setSourceWindow(ByVal hWnd As IntPtr) As Boolean
+
+Private Function setSourceWindow(ByVal strWnd As String) As Boolean
 ''--------------------------------------------------------------------
 ''    ソースウィンドウを設定する。
 ''--------------------------------------------------------------------
+Dim x As Integer
+Dim hWnd As IntPtr
 
+    If strWnd = "" Then
+        hWnd = IntPtr.Zero
+    Else
+        x = Convert.ToInt32(strWnd, 16)
+        hWnd = x
+    End If
+
+    Return  setSourceWindow(hWnd)
 End Function
 
 
