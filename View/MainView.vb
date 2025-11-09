@@ -68,8 +68,8 @@ Private Function setSourceRect(
 
     Me.m_srcRect = srcRect
     showSourceRect(Me.m_srcRect)
-    Return  True
 
+    Return  True
 End Function
 
 
@@ -102,7 +102,6 @@ Private Sub showSourceRect(ByVal r As System.Drawing.Rectangle)
 ''--------------------------------------------------------------------
 
     txbRect.Text = $"{r.Left}, {r.Top}, {r.Width}, {r.Height}"
-
 End Sub
 
 
@@ -140,18 +139,17 @@ Private Sub MainView_MouseDown(sender As Object, e As EventArgs) Handles _
 ''    フォームのマウスダウンイベントハンドラ。
 ''--------------------------------------------------------------------
 Dim hWnd As IntPtr
-Dim rectSrc As System.Drawing.Rectangle
-Dim sbWndName As System.Text.StringBuilder
+Dim srcRect As System.Drawing.Rectangle
 
     Me.Capture = False
 
     ' マウスの位置からウィンドウハンドルを取得する
     hWnd = WindowFromPoint(Cursor.Position)
-    GetWindowRect(hWnd, rectSrc)
+    GetWindowRect(hWnd, srcRect)
 
     ' ウィンドウキャプションを取得する
     showSourceWidow(hWnd)
-    Me.txbRect.Text = $"{rectSrc.Left}, {rectSrc.Top}, {rectSrc.Width}, {rectSrc.Height}"
+    setSourceRect(srcRect)
 End Sub
 
 
