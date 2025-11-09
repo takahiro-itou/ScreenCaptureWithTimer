@@ -184,17 +184,15 @@ Private Sub MainView_MouseDown(sender As Object, e As EventArgs) Handles _
 ''    フォームのマウスダウンイベントハンドラ。
 ''--------------------------------------------------------------------
 Dim hWnd As IntPtr
-Dim srcRect As System.Drawing.Rectangle
 
+    ' マウスをリリースする
     Me.Capture = False
 
     ' マウスの位置からウィンドウハンドルを取得する
     hWnd = WindowFromPoint(Cursor.Position)
-    GetWindowRect(hWnd, srcRect)
 
-    ' ウィンドウキャプションを取得する
-    showSourceWindow(hWnd)
-    setSourceRect(srcRect)
+    setSourceWindow(hWnd)
+
 End Sub
 
 
