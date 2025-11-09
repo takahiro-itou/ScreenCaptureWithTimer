@@ -230,6 +230,18 @@ Private Sub btnPause_Click(sender As Object, e As EventArgs) Handles _
 End Sub
 
 
+Private Sub btnRectOK_Click(sender As Object, e As EventArgs) Handles _
+            btnRectOK.Click
+''--------------------------------------------------------------------
+''    ボタンのクリックイベントハンドラ。
+''
+''    手動で入力した矩形情報をパラメータにセットする
+''--------------------------------------------------------------------
+
+    setSourceRect(txbRect.Text)
+End Sub
+
+
 Private Sub btnWndOK_Click(sender As Object, e As EventArgs) Handles _
             btnWndOK.Click
 ''--------------------------------------------------------------------
