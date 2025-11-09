@@ -48,6 +48,12 @@ Private Function captureScreen() As Boolean
 ''--------------------------------------------------------------------
 ''    ウィンドウのキャプチャを行う
 ''--------------------------------------------------------------------
+Dim strPath As String
+
+    strPath = $"{Me.m_outPrefix}-{Me.m_nextNumber}"
+    Me.m_nextNumber = Me.m_nextNumber + 1
+
+    Return  captureScreen(Me.m_hSrcWnd, Me.m_srcRect, strPath)
 
 End Function
 
