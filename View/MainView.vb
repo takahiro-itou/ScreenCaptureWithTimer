@@ -115,7 +115,7 @@ Private Function setSourceWindow(ByVal hWnd As IntPtr) As Boolean
 Dim srcRect As System.Drawing.Rectangle
 
     Me.m_hSrcWnd = hWnd
-    showSourceWindow()
+    showSourceWindow(Me.m_hSrcWnd)
 
     GetWindowRect(hWnd, srcRect)
     Return  setSourceRect(srcRect)
