@@ -77,7 +77,20 @@ Private Function setSourceRect(ByVal strRect As String) As Boolean
 ''--------------------------------------------------------------------
 ''    ソース矩形を設定する。
 ''--------------------------------------------------------------------
+Dim parts1 As String()
+Dim X As Integer
+Dim Y As Integer
+Dim W As Integer
+Dim H As Integer
 
+    parts1 = strRect.Split(New String() {","}, 4, StringSplitOptions.None)
+    X = Val(parts1(0))
+    Y = Val(parts1(1))
+    W = Val(parts1(2))
+    H = Val(parts1(3))
+
+    Return  setSourceRect(
+        New System.Drawing.Rectangle With {.X = X, .Y = Y, .Width = W, .Height = J})
 End Function
 
 
