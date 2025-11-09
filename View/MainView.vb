@@ -136,8 +136,11 @@ Dim hWnd As IntPtr
 
     If strWnd = "" Then
         hWnd = IntPtr.Zero
+    ElseIf Microsoft.VisualBasic.Left(strWnd, 2) = "0x" Then
+        x = Convert.ToInt32(Microsoft.VisualBasic.Mid$(strWnd, 3), 16)
+        hWnd = x
     Else
-        x = Convert.ToInt32(strWnd, 16)
+        x = Convert.ToInt32(strWnd, 10)
         hWnd = x
     End If
 
@@ -210,7 +213,7 @@ Private Sub btnDesktop_Click(sender As Object, e As EventArgs) Handles _
 Dim hWndDesktop As IntPtr
 
     hWndDesktop = GetDesktopWindow()
-    txbWnd.Text = $"{hWndDesktop}"
+    setSourceWindow(hWndDesktop)
 End Sub
 
 
