@@ -57,6 +57,13 @@ Private Function initializeCapture() As Boolean
 ''    キャプチャの初期化を行う
 ''--------------------------------------------------------------------
 
+    Me.m_outPrefix = txbOutput.Text
+    Me.m_nextNumber = 0
+    tmrSnap.Interval = updInterval.Value
+    tmrSnap.Enabled = False
+
+    Return  captureScreen()
+
 End Function
 
 
@@ -69,7 +76,8 @@ Private Function setSourceRect(
     Me.m_srcRect = srcRect
     showSourceRect(Me.m_srcRect)
 
-    Return  True
+    Return  initializeCapture()
+
 End Function
 
 
