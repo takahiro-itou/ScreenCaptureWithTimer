@@ -28,7 +28,7 @@ Dim hDstDC As IntPtr
 
     hDstDC = grpBuffer.GetHdc()
     BitBlt(hDstDC, 0, 0, srcRect.Width, srcRect.Height,
-           hDisplayDC, 0, 0, SRCCOPY)
+           hDisplayDC, srcRect.X, srcRect.Y, SRCCOPY)
     grpBuffer.ReleaseHdc(hDstDC)
     ReleaseDC(IntPtr.Zero, hDisplayDC)
 
