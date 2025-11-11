@@ -28,7 +28,7 @@ Dim hDstDC As IntPtr
 
     hDstDC = grpBuffer.GetHdc()
     BitBlt(hDstDC, 0, 0, srcRect.Width, srcRect.Height,
-           hDisplayDC, 0, 0, SRCCOPY)
+           hDisplayDC, srcRect.X, srcRect.Y, SRCCOPY)
     grpBuffer.ReleaseHdc(hDstDC)
     ReleaseDC(IntPtr.Zero, hDisplayDC)
 
@@ -48,6 +48,16 @@ Private Function captureScreen() As Boolean
 ''--------------------------------------------------------------------
 ''    ウィンドウのキャプチャを行う
 ''--------------------------------------------------------------------
+Dim strPath As String
+
+    strPath = $"{Me.m_outPrefix}-{Me.m_nextNumber}"
+    Me.m_nextNumber = Me.m_nextNumber + 1
+
+    showSourceWindow(Me.m_hSrcWnd)
+    showSourceRect(Me.m_srcRect)
+    Me.Text = $"Cap to {strPath}"
+
+    Return  captureScreen(Me.m_hSrcWnd, Me.m_srcRect, strPath)
 
 End Function
 
@@ -56,6 +66,13 @@ Private Function initializeCapture() As Boolean
 ''--------------------------------------------------------------------
 ''    キャプチャの初期化を行う
 ''--------------------------------------------------------------------
+
+    Me.m_outPrefix = txbOutput.Text
+    Me.m_nextNumber = 0
+    tmrSnap.Interval = updInterval.Value
+    tmrSnap.Enabled = False
+
+    Return  captureScreen()
 
 End Function
 
@@ -69,7 +86,8 @@ Private Function setSourceRect(
     Me.m_srcRect = srcRect
     showSourceRect(Me.m_srcRect)
 
-    Return  True
+    Return  initializeCapture()
+
 End Function
 
 
@@ -98,6 +116,13 @@ Private Function setSourceWindow(ByVal hWnd As IntPtr) As Boolean
 ''--------------------------------------------------------------------
 ''    ソースウィンドウを設定する。
 ''--------------------------------------------------------------------
+Dim srcRect As System.Drawing.Rectangle
+
+    Me.m_hSrcWnd = hWnd
+    showSourceWindow(Me.m_hSrcWnd)
+
+    GetWindowRect(hWnd, srcRect)
+    Return  setSourceRect(srcRect)
 
 End Function
 
@@ -111,8 +136,11 @@ Dim hWnd As IntPtr
 
     If strWnd = "" Then
         hWnd = IntPtr.Zero
+    ElseIf Microsoft.VisualBasic.Left(strWnd, 2) = "0x" Then
+        x = Convert.ToInt32(Microsoft.VisualBasic.Mid$(strWnd, 3), 16)
+        hWnd = x
     Else
-        x = Convert.ToInt32(strWnd, 16)
+        x = Convert.ToInt32(strWnd, 10)
         hWnd = x
     End If
 
@@ -129,7 +157,7 @@ Private Sub showSourceRect(ByVal r As System.Drawing.Rectangle)
 End Sub
 
 
-Private Sub showSourceWidow(ByVal hWnd As IntPtr)
+Private Sub showSourceWindow(ByVal hWnd As IntPtr)
 ''--------------------------------------------------------------------
 ''    ソースウィンドウの情報を表示する。
 ''--------------------------------------------------------------------
@@ -163,17 +191,15 @@ Private Sub MainView_MouseDown(sender As Object, e As EventArgs) Handles _
 ''    フォームのマウスダウンイベントハンドラ。
 ''--------------------------------------------------------------------
 Dim hWnd As IntPtr
-Dim srcRect As System.Drawing.Rectangle
 
+    ' マウスをリリースする
     Me.Capture = False
 
     ' マウスの位置からウィンドウハンドルを取得する
     hWnd = WindowFromPoint(Cursor.Position)
-    GetWindowRect(hWnd, srcRect)
 
-    ' ウィンドウキャプションを取得する
-    showSourceWidow(hWnd)
-    setSourceRect(srcRect)
+    setSourceWindow(hWnd)
+
 End Sub
 
 
@@ -187,7 +213,7 @@ Private Sub btnDesktop_Click(sender As Object, e As EventArgs) Handles _
 Dim hWndDesktop As IntPtr
 
     hWndDesktop = GetDesktopWindow()
-    txbWnd.Text = $"{hWndDesktop}"
+    setSourceWindow(hWndDesktop)
 End Sub
 
 
@@ -212,6 +238,18 @@ Private Sub btnPause_Click(sender As Object, e As EventArgs) Handles _
 ''--------------------------------------------------------------------
 
     tmrSnap.Enabled = False
+End Sub
+
+
+Private Sub btnRectOK_Click(sender As Object, e As EventArgs) Handles _
+            btnRectOK.Click
+''--------------------------------------------------------------------
+''    ボタンのクリックイベントハンドラ。
+''
+''    手動で入力した矩形情報をパラメータにセットする
+''--------------------------------------------------------------------
+
+    setSourceRect(txbRect.Text)
 End Sub
 
 
@@ -265,7 +303,7 @@ Private Sub tmrSnap_Tick(sender As Object, e As EventArgs) Handles _
 ''    「タイマー」のイベントハンドラ
 ''--------------------------------------------------------------------
 
-    captureScreen(IntPtr.Zero, Screen.PrimaryScreen.Bounds, "Test")
+    captureScreen()
 End Sub
 
 
